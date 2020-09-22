@@ -1,30 +1,19 @@
-import React, { Fragment } from 'react';
-import VideoList from './VideoList';
-import VideoRectangle from './VideoRectangle';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-    margin: 0 auto;
-    width: 90%;
-    mid-width: 200px;
-    display: flex;
-    flex-direction: row;
-`;
+import React, { Fragment } from "react";
+import VideoList from "./VideoList";
+import VideoRectangle from "./VideoRectangle";
 
 export default function VideoPlayer({ dispatch, videoSelected, videos }) {
-    return (
-        <Fragment>
-            <h1>Video Player</h1>
-            <Wrapper>
-                <VideoRectangle
-                    videoSelected={videoSelected}
-                    videos={videos}
-                />
-                <VideoList
-                    dispatch={dispatch}
-                    videos={videos}
-                />
-            </Wrapper>
-        </Fragment>
-    );
+  videos = videos.sort((a, b) => (a.name > b.name ? 1 : -1));
+
+  return (
+    <Fragment>
+      <section className="container">
+        <h1>
+          {videos[videoSelected] ? videos[videoSelected].name : "Video Player"}
+        </h1>
+        <VideoRectangle videoSelected={videoSelected} videos={videos} />
+        <VideoList dispatch={dispatch} videos={videos} />
+      </section>
+    </Fragment>
+  );
 }

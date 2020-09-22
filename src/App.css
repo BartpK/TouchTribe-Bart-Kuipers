@@ -1,10 +1,83 @@
-/*
-    Try to avoid adding styling here. Use Styled Components instead,
-    which is already a dependency of the app. Read more here:
-
-    https://www.styled-components.com/docs
-*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: #1e1e24;
+}
+
+a {
+  display: block;
+}
+
+.container {
+  grid-template-columns: auto;
+  grid-template-rows: 4rem auto;
+}
+
+.video-list {
+  grid-column: 1/1;
+  background-color: #141418;
+}
+
+.player-wrapper {
+  grid-column: 1;
+  padding: 1rem;
+}
+
+.player-wrapper {
+  grid-column: 1;
+  padding: 1rem;
+}
+
+.video-list {
+  grid-column: 2/-1;
+  grid-row: 1/-1;
+  padding: 1rem;
+  max-height: 100vh;
+  overflow: scroll;
+}
+
+.video-list div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0.8rem;
+  text-align: left;
+  transition: background-color 300ms;
+}
+
+.video-list > a:hover {
+  background-color: #4a4a4f;
+}
+
+.video-list > div > img {
+  margin-right: 0.6rem;
+}
+
+.container > h1 {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+
+  .video-list > div img {
+    display: block;
+    padding-bottom: 0.8rem;
+  }
+
+  .video-list div {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0.8rem;
+  }
 }
