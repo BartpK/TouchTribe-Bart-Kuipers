@@ -5,19 +5,25 @@
   margin: 0;
   color: white;
   font-family: "Montserrat", sans-serif;
+  text-decoration: none;
 }
 
 body {
   background-color: #1e1e24;
 }
 
+a {
+  display: block;
+}
+
 .container {
   grid-template-columns: auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: 4rem auto;
 }
 
 .video-list {
   grid-column: 1/1;
+  background-color: #141418;
 }
 
 .player-wrapper {
@@ -32,12 +38,13 @@ body {
 
 .video-list {
   grid-column: 2/-1;
+  grid-row: 1/-1;
   padding: 1rem;
-  max-height: 95vh;
+  max-height: 100vh;
   overflow: scroll;
 }
 
-.video-list > div {
+.video-list div {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 0.8rem;
@@ -45,7 +52,7 @@ body {
   transition: background-color 300ms;
 }
 
-.video-list > div:hover {
+.video-list > a:hover {
   background-color: #4a4a4f;
 }
 
@@ -68,7 +75,7 @@ body {
     padding-bottom: 0.8rem;
   }
 
-  .video-list > div {
+  .video-list div {
     display: grid;
     grid-template-columns: auto;
     margin: 0.8rem;

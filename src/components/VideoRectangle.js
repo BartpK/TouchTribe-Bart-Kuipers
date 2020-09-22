@@ -14,7 +14,6 @@ import _get from "lodash/get";
 
 export default function VideoRectangle({ videoSelected, videos }) {
   const [videoSource, setVideoSource] = useState(null);
-
   useEffect(() => {
     setVideoSource(_get(videos, `${videoSelected}.path`, ""));
   }, [videoSelected, videoSource, videos]);
